@@ -11,25 +11,9 @@
   <form>
     <label for="texto">Digite uma palavra ou frase:</label>
     <input type="text" id="texto" name="texto">
-    <button type="button" onclick="verificarPalindromo()">Verificar</button>
+    <button type="button" id="btn-verificar">Verificar</button>
   </form>
 
-  <script>
-    function verificarPalindromo() {
-      let texto = document.getElementById('texto').value.trim();
-      if (texto === '') {
-        alert('Nenhum texto foi digitado.');
-        return;
-      }
-      let textoFormatado = texto.replace(/\s/g, '').toLowerCase();
-      let textoInvertido = textoFormatado.split('').reverse().join('');
-      if (textoFormatado === textoInvertido) {
-        alert(`${texto} é um palíndromo!`);
-      } else {
-        alert(`${texto} não é um palíndromo.`);
-      }
-    }
-  </script>
-
+  <script src="ex3.js"></script>
 </body>
 </html>

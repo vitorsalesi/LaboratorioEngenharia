@@ -1,0 +1,11 @@
+#root {
+    color: #333;
+    font-size: 2rem;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    margin: 0 auto;
+    width: 80%;
+    height: 100px;
+    overflow: hidden;
+  }

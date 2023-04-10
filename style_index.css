@@ -4,21 +4,21 @@
     border: 0.1em solid;
     padding: 30px;
     border-color: black;
-}
-
-input[type="text"] {
-    margin-bottom:15px;
-    width:100%;
-    
-}
-
-input[type="submit"] {
-    display: block;
-    margin: 0 auto;
   }
 
-
-h1{
+  h1{
     text-align: center;
     margin-top: 20px;
+  }
+
+  li{
+    margin-top: 5px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover{
+    color: grey;
   }

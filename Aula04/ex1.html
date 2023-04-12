@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style1.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Aula 04 - Exercicio 1 - Formulário</title>
+    <script src="ex1.js"></script>
+</head>
+
+<body>
+    <div class="container box mt-5">
+        <form id="cadastro">
+            <h1>Formulário de Cadastro:</h1>
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="nome">Nome:</label>
+                    <input class="form-control" type="text" id="nome" name="nome" required />
+                </div>
+                <div class="col-md-8">
+                    <label for="email">E-mail:</label>
+                    <input class="form-control" type="email" id="email" name="email" required />
+                </div>
+                <div class="col-md-4">
+                    <label for="dataNasc">Data de nascimento:</label>
+                    <input class="form-control" type="date" id="dataNasc" name="dataNasc" required />
+                </div>
+                <div class="col-md-4">
+                    <label for="telefoneFixo">Telefone Fixo:</label>
+                    <input class="form-control" type="text" id="telefoneFixo" name="telefoneFixo" required />
+                </div>
+                <div class="col-md-4">
+                    <label for="telefoneCelular">Telefone celular:</label>
+                    <input class="form-control" type="text" id="telefoneCelular" name="telefoneCelular" required />
+                </div>
+                <div class="col-md-4">
+                    <label>
+                        <input type="radio" name="tipoUsuario" value="professor" />
+                        Professor </label><br />
+                    <label>
+                        <input type="radio" name="tipoUsuario" value="aluno" />
+                        Aluno
+                    </label>
+                </div>
+                <div class="col-md-4" name="area">
+                    <label for="area">Área:</label>
+                    <input class="form-control" type="text" id="area" />
+                </div>
+
+                <div class="col-md-4" name="matricula">
+                    <label for="matricula">Matrícula:</label>
+                    <input class="form-control" type="number" id="matricula" required />
+                </div>
+                <div class="col-md-4" name="lattes">
+                    <label for="lattes">Lattes:</label>
+                    <input class="form-control" type="text" id="lattes" />
+                </div>
+
+                <div class="col-md-4" name="curso">
+                    <label for="curso">Curso:</label>
+                    <input class="form-control" type="text" id="curso" />
+                </div>
+                <div class="col-md-12" id="botoes">
+                    <input type="submit" value="Enviar">
+                    <input type="reset" value="Redefinir">
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <title>Aula 05 - Exercicio 01 - Letreiro</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const phrase = "Venha estudar na Fatec";
+        let substring = "";
+        let index = 0;
+        let direction = "right";
+
+        function Frase() {
+            substring = phrase.substring(0, index);
+            ReactDOM.render(substring, document.getElementById('root'));
+            if (direction === "right") {
+                index++;
+                if (index > phrase.length) {
+                    index = phrase.length;
+                    direction = "left";
+                }
+            } else {
+                index--;
+                if (index < 0) {
+                    index = 0;
+                    direction = "right";
+                }
+            }
+        }
+        setInterval(Frase, 100);
+    </script>
+</body>
+</html>
+

@@ -13,7 +13,7 @@ form {
 }
 
 h1 {
-    text-align: center;
+    text-align: left;
 }
 
 label {
@@ -22,40 +22,9 @@ label {
     margin-bottom: 5px;
 }
 
-input[type="text"],
-input[type="email"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-}
-
-#tipoCadastro{
-    text-align:center;
-}
-
-input[type="radio"] {
-    margin-right: 5px;
-
-}
-
-button[type="submit"],
-button[type="reset"] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
 #botoes{
     text-align: center;
+    margin-top: 20px;
 }
 
-button[type="submit"]:hover,
-button[type="reset"]:hover {
-    background-color: #45a049;
-}
+

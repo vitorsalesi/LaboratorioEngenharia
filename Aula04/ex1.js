@@ -1,65 +1,103 @@
-function tipoCadastroOnChange() {
-    let tipoCadastro = document.querySelector('input[name="tipoCadastro"]:checked').value;
-    let camposExtras = document.getElementById("camposExtras");
-    camposExtras.innerHTML = "";
-  
-    if (tipoCadastro === "aluno") {
-      let cursoLabel = document.createElement("label");
-      cursoLabel.setAttribute("for", "curso");
-      cursoLabel.innerHTML = "Curso:";
-      let cursoInput = document.createElement("input");
-      cursoInput.setAttribute("type", "text");
-      cursoInput.setAttribute("id", "curso");
-      cursoInput.setAttribute("name", "curso");
-      cursoInput.placeholder = "Digite seu curso";
-      camposExtras.appendChild(cursoLabel);
-      camposExtras.appendChild(cursoInput);
-  
-      let matriculaLabel = document.createElement("label");
-      matriculaLabel.setAttribute("for", "matricula");
-      matriculaLabel.innerHTML = "Matrícula:";
-      let matriculaInput = document.createElement("input");
-      matriculaInput.setAttribute("type", "text");
-      matriculaInput.setAttribute("id", "matricula");
-      matriculaInput.setAttribute("name", "matricula");
-      matriculaInput.placeholder ="Digite sua matrícula";
-      camposExtras.appendChild(matriculaLabel);
-      camposExtras.appendChild(matriculaInput);
-    }
-  
-    if (tipoCadastro === "professor") {
-        let areaLabel = document.createElement("label");
-        areaLabel.setAttribute("for", "areaAtuacao");
-        areaLabel.innerHTML = "Área:";
-        let areaInput = document.createElement("input");
-        areaInput.setAttribute("type", "text");
-        areaInput.setAttribute("id", "areaAtuação");
-        areaInput.setAttribute("name", "areaAtuacao");
-        areaInput.placeholder ="Digite sua área de atuação";
-        camposExtras.appendChild(areaLabel);
-        camposExtras.appendChild(areaInput);
-    
-        let matriculaLabel = document.createElement("label");
-        matriculaLabel.setAttribute("for", "matricula");
-        matriculaLabel.innerHTML = "Matrícula:";
-        let matriculaInput = document.createElement("input");
-        matriculaInput.setAttribute("type", "text");
-        matriculaInput.setAttribute("id", "matricula");
-        matriculaInput.setAttribute("name", "matricula");
-        matriculaInput.placeholder ="Digite sua matrícula";
-        camposExtras.appendChild(matriculaLabel);
-        camposExtras.appendChild(matriculaInput);
-
-        let lattesLabel = document.createElement("label");
-        lattesLabel.setAttribute("for", "lattes");
-        lattesLabel.innerHTML = "Lattes:";
-        let lattesInput = document.createElement("input");
-        lattesInput.setAttribute("type", "text");
-        lattesInput.setAttribute("id", "lattes");
-        lattesInput.setAttribute("name", "lattes");
-        lattesInput.placeholder ="Digite aqui o endereço para seu Lattes";
-        camposExtras.appendChild(lattesLabel);
-        camposExtras.appendChild(lattesInput);
-    }
+class Pessoa {
+  constructor(nome, email, dataNasc, telefoneFixo, telefoneCelular) {
+    this.nome = nome;
+    this.email = email;
+    this.dataNasc = dataNasc;
+    this.telefoneFixo = telefoneFixo;
+    this.telefoneCelular = telefoneCelular;
   }
+}
+
+class Professor extends Pessoa {
+  constructor(
+    nome,
+    email,
+    dataNasc,
+    telefoneFixo,
+    telefoneCelular,
+    area,
+    lattes
+  ) {
+    super(nome, email, dataNasc, telefoneFixo, telefoneCelular);
+    this.area = area;
+    this.lattes = lattes;
+  }
+}
+
+class Aluno extends Pessoa {
+  constructor(
+    nome,
+    email,
+    dataNasc,
+    telefoneFixo,
+    telefoneCelular,
+    matricula,
+    curso
+  ) {
+    super(nome, email, dataNasc, telefoneFixo, telefoneCelular);
+    this.matricula = matricula;
+    this.curso = curso;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const professorInputs = document.querySelectorAll(
+    '[name="area"], [name="lattes"]'
+  );
+  const alunoInputs = document.querySelectorAll('[name="curso"]');
+
+  alunoInputs.forEach(
+    (alunoInput) => (alunoInput.style.display = "none")
+  );
+  professorInputs.forEach(
+    (professorInput) => (professorInput.style.display = "none")
+  );
+
+  const tipoUsuarioInput = document.getElementsByName("tipoUsuario");
+
+  tipoUsuarioInput.forEach((input) => {
+    input.addEventListener("change", () => {
+      if (input.value === "professor") {
+        professorInputs.forEach(
+          (professorInput) => (professorInput.style.display = "block")
+        );
+        alunoInputs.forEach(
+          (alunoInput) => (alunoInput.style.display = "none")
+        );
+      } else if (input.value === "aluno") {
+        professorInputs.forEach(
+          (professorInput) => (professorInput.style.display = "none")
+        );
+        alunoInputs.forEach(
+          (alunoInput) => (alunoInput.style.display = "block")
+        );
+      }
+    });
+  });
+
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const tipoUsuario = form.elements.tipoUsuario.value;
+    const nome = form.elements.nome.value;
+    const email = form.elements.email.value;
+    const dataNasc = form.elements.dataNasc.value;
+    const telefoneFixo = form.elements.telefoneFixo.value;
+    const telefoneCelular = form.elements.telefoneCelular.value;
+
+    let usuario;
+
+    if (tipoUsuario === "aluno") {
+      const curso = form.elements.curso.value;
+      usuario = new Aluno(nome, email, dataNasc, telefoneFixo, telefoneCelular, tipoUsuario, curso);
+    } else if (tipoUsuario === "professor") {
+      const matricula = form.elements.matricula.value;
+      const area = form.elements.area.value;
+      const lattes = form.elements.lattes.value;
+      usuario = new Professor(nome, email, dataNasc, telefoneFixo, telefoneCelular, tipoUsuario, matricula, area, lattes);
+    }
+  });
+});
+  
   
